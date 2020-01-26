@@ -38,72 +38,38 @@
 
 # Getting started
 
-## Linux
+## Gyrux installation
 
-### amd64
-
-> cd gyrux
-
-> make linux-amd64
-
-### arm64
+### Windows
 
 > cd gyrux
 
-> make linux-arm64
+> install.bat
 
-### i386
-
-> cd gyrux
-
-> make linux-i386
-
-## macOS
-
-### amd64
+### Other
 
 > cd gyrux
 
-> make darwin-amd64
+> chmod +x install.sh
 
-## Windows
+> ./install.sh
 
-### amd64
+## Gyrux uninstallation 
 
-> cd gyrux
-
-> make windows-amd64
-
-### i386
-
-> cd gyrux 
-
-> make windows-i386
-
-## FreeBSD
-
-### amd64
+### Windows
 
 > cd gyrux
 
-> make freebsd-amd64
+> uninstall.bat
 
-## OpenBSD 
-
-### amd64
+### Other
 
 > cd gyrux
 
-> make openbsd-amd64
+> chmod +x uninstall.sh
 
-## NetBSD
+> ./uninstall.sh
 
-### amd64
-
-> cd gyrux
-
-> make netbsd-amd64
- 
 ***
  
 # Executing Gyrux Language
