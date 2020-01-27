@@ -1,6 +1,6 @@
 package bundled
 
-const stdgy = `use re
+const aliasgy = `use re
 
 dir = ~/.gyrux/aliases
 
