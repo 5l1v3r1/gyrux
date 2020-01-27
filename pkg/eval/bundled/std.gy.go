@@ -101,7 +101,7 @@ fn optional-input [@input]{
   } elif (eq (count $input) 1) {
     input = [ (explode $input[0]) ]
   } else {
-    fail "util:optional-input: want 0 or 1 arguments, got "(count $input)
+    fail "std:optional-input: want 0 or 1 arguments, got "(count $input)
   }
   put $input
 }
@@ -119,3 +119,4 @@ fn partial [f @p-args]{
     $f $@p-args $@args
   }
 }
+`
