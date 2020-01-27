@@ -20,7 +20,7 @@ fn stack { print $@-dirstack }
 
 fn size { count $-dirstack }
 
-fn history {
+fn dhist {
   for index [(range 0 (size))] {
     if (== $index $-cursor) {
       echo (styled "* "$-dirstack[$index] green)
@@ -75,7 +75,7 @@ fn pop {
   }
 }
 
-fn cd [@dir]{
+fn chdir [@dir]{
   if (and (== (count $dir) 1) (eq $dir[0] "-")) {
     builtin:cd $-dirstack[(- $-cursor 1)]
   } else {
