@@ -1,6 +1,6 @@
 package bundled
 
-const readlineBindingcy = `
+const readlineBindinggy = `
 b=[k f]{ edit:insert:binding[$k] = $f } {
     $b Ctrl-A $edit:move-dot-sol~
     $b Ctrl-B $edit:move-dot-left~
