@@ -21,7 +21,7 @@ fn stack { print $@-dirstack }
 fn size { count $-dirstack }
 
 fn history {
-  for index [(range 0 (stacksize))] {
+  for index [(range 0 (size))] {
     if (== $index $-cursor) {
       echo (styled "* "$-dirstack[$index] green)
     } else {
@@ -31,7 +31,7 @@ fn history {
 }
 
 fn getcwd {
-  if (> (stacksize) 0) {
+  if (> (size) 0) {
     print $-dirstack[$-cursor]
   } else {
     print ""
@@ -39,12 +39,12 @@ fn getcwd {
 }
 
 fn push {
-  if (or (== (stacksize) 0) (!=s $pwd (getcwd))) {
+  if (or (== (size) 0) (!=s $pwd (getcwd))) {
     -dirstack = [ (explode $-dirstack[0:(+ $-cursor 1)]) $pwd ]
-    if (> (stacksize) $max-stack-size) {
+    if (> (size) $max-stack-size) {
       -dirstack = $-dirstack[(- $max-stack-size):]
     }
-    -cursor = (- (stacksize) 1)
+    -cursor = (- (size) 1)
   }
 }
 
