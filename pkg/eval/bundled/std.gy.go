@@ -39,11 +39,11 @@ fn eval [str]{
   rm -f $tmpf
 }
 
-in~ = { put (head -n1) }
+in~ = { print (head -n1) }
 
 use builtin
 if (has-key $builtin: read-upto~) {
-  in~ = { put (read-upto "\n")[:-1] }
+  in~ = { print (read-upto "\n")[:-1] }
 }
 
 fn max [a @rest &with=[v]{put $v}]{
