@@ -4,9 +4,10 @@ package bundled
 // Get returns a map of bundled modules.
 func Get() map[string]string {
 	return map[string]string{
-		"binding":          bindingcy,
+		"binding":          bindinggy,
 		"gypm":             gypmgy,
-		"narrow":           narrowcy,
-		"readline-binding": readlineBindingcy,
+                "std":              stdgy,
+		"narrow":           narrowgy,
+		"readline-binding": readlineBindinggy,
 	}
 }
