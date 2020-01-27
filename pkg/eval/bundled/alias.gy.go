@@ -36,7 +36,7 @@ fn def [&verbose=false &use=[] name @cmd]{
   if (not-eq $verbose false) {
     echo (styled "Defining alias "$name green)
   }
-  -load-alias $name $file
+  load $name $file
 }
 
 fn new [&verbose=false &use=[] @arg]{ def &verbose=$verbose &use=$use $@arg }
