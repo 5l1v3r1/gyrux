@@ -43,8 +43,8 @@ fn eval [str]{
 in~ = { print (head -n1) }
 
 use builtin
-if (has-key $builtin: read-upto~) {
-  in~ = { print (read-upto "\n")[:-1] }
+if (has-key $builtin: read~) {
+  in~ = { print (read)[:-1] }
 }
 
 fn max [a @rest &with=[v]{put $v}]{
