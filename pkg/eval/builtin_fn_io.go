@@ -61,11 +61,7 @@ func sep(fm *Frame, args ...interface{}) {
 	}
 }
 
-func read(fm *Frame, last string) (string, error) {
-        last := "\n"
-	if len(last) != 1 {
-		return "", ErrArgs
-	}
+func read(fm *Frame) (string, error) {
 	in := fm.InputFile()
 	var buf []byte
 	for {
@@ -78,11 +74,12 @@ func read(fm *Frame, last string) (string, error) {
 			return "", err
 		}
 		buf = append(buf, b[0])
-		if b[0] == last[0] {
+                vr := "\n"
+		if b[0] == vr[0] {
 			break
 		}
 	}
-	return string(buf), nil
+	return string(buf[:-1]), nil
 }
 
 type printOpts struct{ Sep string }
