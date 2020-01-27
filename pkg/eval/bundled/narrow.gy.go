@@ -1,6 +1,6 @@
 package bundled
 
-const narrowcy = `
+const narrowgy = `
 # Implementation of location, history and lastcmd mode using the new
 # -narrow-read mode. One advantage of this is that it allows the
 # execution of arbitrary hooks before or after each mode.
