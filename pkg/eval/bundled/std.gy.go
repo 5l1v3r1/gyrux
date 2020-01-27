@@ -48,14 +48,14 @@ fn y-or-n [&style=default prompt]{
     prompt = (styled $prompt $style)
   }
   print $prompt > /dev/tty
-  resp = (readline)
+  resp = (read)
   eq $resp y
 }
 
 fn getfile {
   use re
   print 'Drop a file here: ' >/dev/tty
-  re:replace '\\(.)' '$1' (readline)[:-1]
+  re:replace '\\(.)' '$1' (read)[:-1]
 }
 
 fn max [a @rest &with=[v]{put $v}]{
