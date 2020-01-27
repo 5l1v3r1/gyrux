@@ -8,6 +8,6 @@ func Get() map[string]string {
 		"gypm":             gypmgy,
                 "std":              stdgy,
 		"narrow":           narrowgy,
-		"readline-binding": readlineBindinggy,
+		"alias": 	    aliasgy,
 	}
 }
