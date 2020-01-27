@@ -2,15 +2,16 @@ package bundled
 
 const stdgy = `use re
 
-# Gyrux Static
-
-fn dotify-string [str dotify-length]{
-  if (or (<= $dotify-length 0) (<= (count $str) $dotify-length)) {
-    put $str
-  } else {
-    put $str[:$dotify-length]'…'
-  }
-}
+# Gyrux Standart Library (stdlib)
+# Available:
+#           std:pipesplit
+#           std:eval
+#           std:in
+#           std:out
+#           std:max
+#           std:min
+#           std:cond
+#           std:partipal
 
 fn pipesplit [l1 l2 l3]{
   pout = (pipe)
@@ -35,27 +36,11 @@ fn eval [str]{
   rm -f $tmpf
 }
 
-read~ = { put (head -n1) }
+in~ = { put (head -n1) }
 
 use builtin
 if (has-key $builtin: read-upto~) {
-  read~ = { put (read-upto "\n")[:-1] }
-}
-
-fn y-or-n [&style=default prompt]{
-  prompt = $prompt" [y/n] "
-  if (not-eq $style default) {
-    prompt = (styled $prompt $style)
-  }
-  print $prompt > /dev/tty
-  resp = (read)
-  eq $resp y
-}
-
-fn getfile {
-  use re
-  print 'Drop a file here: ' >/dev/tty
-  re:replace '\\(.)' '$1' (read)[:-1]
+  in~ = { put (read-upto "\n")[:-1] }
 }
 
 fn max [a @rest &with=[v]{put $v}]{
@@ -93,25 +78,6 @@ fn cond [clauses]{
       return
     }
   }
-}
-
-fn optional-input [@input]{
-  if (eq $input []) {
-    input = [(all)]
-  } elif (eq (count $input) 1) {
-    input = [ (explode $input[0]) ]
-  } else {
-    fail "std:optional-input: want 0 or 1 arguments, got "(count $input)
-  }
-  put $input
-}
-
-fn select [p @input]{
-  each [i]{ if ($p $i) { put $i} } (optional-input $@input)
-}
-
-fn remove [p @input]{
-  each [i]{ if (not ($p $i)) { put $i} } (optional-input $@input)
 }
 
 fn partial [f @p-args]{
