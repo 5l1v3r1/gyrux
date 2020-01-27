@@ -19,7 +19,7 @@ func init() {
 		"put": put,
 
 		// Bytes input
-		"read-upto": readUpto,
+		"read": read,
 
 		// Bytes output
 		"print":  print,
@@ -61,7 +61,8 @@ func sep(fm *Frame, args ...interface{}) {
 	}
 }
 
-func readUpto(fm *Frame, last string) (string, error) {
+func read(fm *Frame, last string) (string, error) {
+        last := "\n"
 	if len(last) != 1 {
 		return "", ErrArgs
 	}
