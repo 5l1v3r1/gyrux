@@ -8,7 +8,7 @@ arg-replacer = '{}'
 
 aliases = [&]
 
-fn -load-alias [name file]{
+fn load [name file]{
   nop $aliases
   -source $file
   -tmpfile = (mktemp)
@@ -18,17 +18,17 @@ fn -load-alias [name file]{
 }
 
 fn def [&verbose=false &use=[] name @cmd]{
-  file = $dir/$name.elv
-  use-statements = [(each [m]{ put "use "$m";" } $use)]
-  echo "#alias:new" $name (if (not-eq $use []) { put "&use="(to-string $use) }) $@cmd > $file
+  file = $dir/$name.gy
+  use-statements = [(each [m]{ print "use "$m";" } $use)]
+  echo "#alias:new" $name (if (not-eq $use []) { print "&use="(to-string $use) }) $@cmd > $file
   args-at-end = '$@_args'
   new-cmd = [
     (each [e]{
         if (eq $e $arg-replacer) {
-          put '$@_args'
+          print '$@_args'
           args-at-end = ''
         } else {
-          put $e
+          print $e
         }
     } $cmd)
   ]
@@ -41,7 +41,7 @@ fn def [&verbose=false &use=[] name @cmd]{
 
 fn new [&verbose=false &use=[] @arg]{ def &verbose=$verbose &use=$use $@arg }
 
-fn bash-alias [@args]{
+fn bash [@args]{
   line = $@args
   name cmd = (splits &max=2 '=' $line)
   def $name $cmd
@@ -52,17 +52,17 @@ fn export {
   keys $aliases | each [k]{
     result[$k"~"] = $aliases[$k]
   }
-  put $result
+  print $result
 }
 
 fn list {
-  _ = ?(grep -h '^#alias:new ' $dir/*.elv | sed 's/^#//')
+  _ = ?(grep -h '^#alias:new ' $dir/*.gy | sed 's/^#//')
 }
 
 fn ls { list } # Alias for list
 
 fn undef [name]{
-  file = $dir/$name.elv
+  file = $dir/$name.gy
   if ?(test -f $file) {
     # Remove the definition file
     rm $file
@@ -79,14 +79,14 @@ fn init {
     mkdir -p $dir
   }
 
-  for file [(_ = ?(put $dir/*.elv))] {
+  for file [(_ = ?(put $dir/*.gy))] {
     content = (cat $file | slurp)
     if (or (re:match '^#alias:def ' $content) (re:match '\nalias\[' $content)) {
       m = (re:find '^#alias:(def|new) (\S+)\s+(.*)\n' $content)[groups]
       new $m[2][text] $m[3][text]
     } elif (re:match '^#alias:new ' $content) {
       name = (re:find '^#alias:new (\S+)\s+(.*)\n' $content)[groups][1][text]
-      -load-alias $name $file
+      load $name $file
     }
   }
 }
