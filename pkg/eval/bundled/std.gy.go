@@ -56,7 +56,7 @@ fn max [a @rest &with=[v]{put $v}]{
       val = $nval
     }
   } $rest
-  put $res
+  print $res
 }
 
 fn min [a @rest &with=[v]{put $v}]{
@@ -69,7 +69,7 @@ fn min [a @rest &with=[v]{put $v}]{
       val = $nval
     }
   } $rest
-  put $res
+  print $res
 }
 
 fn cond [clauses]{
@@ -77,14 +77,14 @@ fn cond [clauses]{
     exp = $clauses[$i]
     if (eq (kind-of $exp) fn) { exp = ($exp) }
     if $exp {
-      put $clauses[(+ $i 1)]
+      print $clauses[(+ $i 1)]
       return
     }
   }
 }
 
 fn partial [f @p-args]{
-  put [@args]{
+  print [@args]{
     $f $@p-args $@args
   }
 }
