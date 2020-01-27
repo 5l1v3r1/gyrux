@@ -30,7 +30,7 @@ fn history {
   }
 }
 
-fn pwd {
+fn getcwd {
   if (> (stacksize) 0) {
     print $-dirstack[$-cursor]
   } else {
@@ -39,7 +39,7 @@ fn pwd {
 }
 
 fn push {
-  if (or (== (stacksize) 0) (!=s $pwd (pwd))) {
+  if (or (== (stacksize) 0) (!=s $pwd (getcwd))) {
     -dirstack = [ (explode $-dirstack[0:(+ $-cursor 1)]) $pwd ]
     if (> (stacksize) $max-stack-size) {
       -dirstack = $-dirstack[(- $max-stack-size):]
