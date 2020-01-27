@@ -35,11 +35,11 @@ fn eval [str]{
   rm -f $tmpf
 }
 
-readline~ = { put (head -n1) }
+read~ = { put (head -n1) }
 
 use builtin
 if (has-key $builtin: read-upto~) {
-  readline~ = { put (read-upto "\n")[:-1] }
+  read~ = { put (read-upto "\n")[:-1] }
 }
 
 fn y-or-n [&style=default prompt]{
