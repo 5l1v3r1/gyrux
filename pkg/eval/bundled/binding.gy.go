@@ -1,6 +1,6 @@
 package bundled
 
-const bindingcy = `
+const bindinggy = `
 fn install {
     edit:insert:binding = (edit:binding-table [
         &Default=       $edit:insert:default~
