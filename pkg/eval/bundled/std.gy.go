@@ -31,6 +31,7 @@ fn pipesplit [l1 l2 l3]{
 
 fn out [text]{
   put $text
+}
 
 fn eval [str]{
   tmpf = (mktemp)
