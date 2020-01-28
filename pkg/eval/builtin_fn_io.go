@@ -6,6 +6,7 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
+	"string"
 
 	"github.com/entynetproject/gyrux/pkg/eval/vals"
 )
@@ -79,7 +80,8 @@ func read(fm *Frame) (string, error) {
 			break
 		}
 	}
-	return string(buf[:-1]), nil
+	gol := strings.Trim(string(buf), "\n")
+	return string(gol), nil
 }
 
 type printOpts struct{ Sep string }
