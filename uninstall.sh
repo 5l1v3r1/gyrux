@@ -25,4 +25,5 @@
 {
 rm /bin/gyrux
 rm /usr/local/bin/gyrux
+rm -rf ~/.gyrux
 } &> /dev/null
