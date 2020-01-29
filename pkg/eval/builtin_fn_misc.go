@@ -20,18 +20,18 @@ import (
 func init() {
 	addBuiltinFns(map[string]interface{}{
 		"nop":        nop,
-		"kind-of":    kindOf,
+		"kind":       kindOf,
 		"constantly": constantly,
 
 		"resolve": resolve,
 
-		"-source": source,
+		"source":  source,
 
 		// Time
 		"sleep": sleep,
-		"-time":  _time,
+		"time":  _time,
 
-		"-ifaddrs": _ifaddrs,
+		"ifaddrs": _ifaddrs,
 	})
 
 	// For rand and randint.
