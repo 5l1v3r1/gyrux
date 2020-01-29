@@ -9,9 +9,9 @@ import (
 func init() {
 	addBuiltinFns(map[string]interface{}{
 		"src":    src,
-		"gygc":   _gc,
+		"gc":     _gc,
 		"stack":  _stack,
-		"gylog":  _log,
+		"log":    _log,
 	})
 }
 
