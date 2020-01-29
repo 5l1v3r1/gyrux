@@ -31,7 +31,7 @@ func init() {
 		"tilde-abbr":    tildeAbbr,
 
 		// File types
-		"-is-dir": isDir,
+		"is-dir": isDir,
 	})
 }
 
