@@ -1,9 +1,6 @@
 <!-- toc -->
 
-If you come from other shells, hopefully the following recipes will get you
-started quickly:
-
-# UI Recipes
+# Gyrux Recipes
 
 -   Put your startup script in `~/.gyrux/rc.gy`. There is no `alias` yet, but
     you can achieve the goal by defining a function:
