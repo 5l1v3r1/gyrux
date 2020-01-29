@@ -6,7 +6,7 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
-	"string"
+	"strings"
 
 	"github.com/entynetproject/gyrux/pkg/eval/vals"
 )
