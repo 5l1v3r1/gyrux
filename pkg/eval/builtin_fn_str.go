@@ -34,7 +34,7 @@ func init() {
 		"base": base,
 
 		"wcswidth":          util.Wcswidth,
-		"-override-wcwidth": util.OverrideWcwidth,
+		"override-wcwidth": util.OverrideWcwidth,
 
 		"has-prefix": strings.HasPrefix,
 		"has-suffix": strings.HasSuffix,
@@ -43,7 +43,7 @@ func init() {
 		"splits":   splits,
 		"replaces": replaces,
 
-		"gyawk": gyawk,
+		"gywk": gywk,
 	})
 }
 
@@ -131,12 +131,12 @@ func base(fm *Frame, b int, nums ...int) error {
 
 var eawkWordSep = regexp.MustCompile("[ \t]+")
 
-// gyawk takes a function. For each line in the input stream, it calls the
+// gywk takes a function. For each line in the input stream, it calls the
 // function with the line and the words in the line. The words are found by
 // stripping the line and splitting the line by whitespaces. The function may
 // call break and continue. Overall this provides a similar functionality to
 // awk, hence the name.
-func gyawk(fm *Frame, f Callable, inputs Inputs) error {
+func gywk(fm *Frame, f Callable, inputs Inputs) error {
 	broken := false
 	var err error
 	inputs(func(v interface{}) {
