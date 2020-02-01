@@ -9,6 +9,5 @@ func Get() map[string]string {
 		"narrow":           narrowgy,
 		"alias": 	    aliasgy,
 		"dir":		    dirgy,
-		"system":	    systemgy,
 	}
 }
