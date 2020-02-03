@@ -74,11 +74,43 @@
  
 # Executing Gyrux Language
 
-    To execute the Gyrux Language, you 
-    should execute the following command.
+> gyrux -help
 
-> gyrux
+```
+Usage: gyrux [OPTION...] <arguments...>
 
+  -bin string
+    	Path to the Gyrux binary.
+  -buildinfo
+    	Show build info and quit.
+  -c	Take first argument as code to execute.
+  -compile
+    	Parse/Compile but do not execute.
+  -cpuprofile string
+    	Write cpu profile to file.
+  -daemon
+    	Run daemon instead of Gyrux.
+  -db string
+    	Path to the database.
+  -gui
+    	Run backend of GUI interface.
+  -help
+    	Show usage help and quit.
+  -json
+    	Show output in JSON. Useful with -buildinfo.
+  -log string
+    	A file to write debug log to.
+  -logprefix string
+    	The prefix for the daemon log file.
+  -norc
+    	Run Gyrux without invoking rc.gy.
+  -port int
+    	The port of the GUI backend. (default 3171)
+  -sock string
+    	Path to the daemon socket.
+  -version
+    	Show version and quit.
+```
 ***
 
 # Gyrux Language license
