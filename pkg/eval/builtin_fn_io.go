@@ -83,7 +83,9 @@ func readUpto(fm *Frame, last string) (string, error) {
 			break
 		}
 	}
-	return string(buf), nil
+	gol := strings.Trim(string(buf), "\n")
+	gols := strings.Trim(gol, "\r")	
+	return string(gols), nil
 }
 
 func read(fm *Frame) (string, error) {
@@ -105,7 +107,8 @@ func read(fm *Frame) (string, error) {
 		}
 	}
 	gol := strings.Trim(string(buf), "\n")
-	return string(gol), nil
+	gols := strings.Trim(gol, "\r")
+	return string(gols), nil
 }
 
 type printOpts struct{ Sep string }
