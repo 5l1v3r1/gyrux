@@ -10,3 +10,6 @@ github.com/xiaq/persistent v0.0.0-20190312105637-a1d9ac4077fc h1:r6bnN6KKLy+njHS
 github.com/xiaq/persistent v0.0.0-20190312105637-a1d9ac4077fc/go.mod h1:ezTJjR1ZWIJvN9QAd79tCd/TO4X3x7FDbLMEGHOI1LA=
 golang.org/x/sys v0.0.0-20180126165840-ff2a66f350ce h1:rL/NvE76zNX12KMlXYCdjlfOp+kjh5sYTnm5QjtNbrU=
 golang.org/x/sys v0.0.0-20180126165840-ff2a66f350ce/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
+golang.org/x/sys v0.0.0-20191026070338-33540a1f6037/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
+golang.org/x/sys v0.0.0-20200113162924-86b910548bc1 h1:gZpLHxUX5BdYLA08Lj4YCJNN/jk7KtquiArPoeX0WvA=
+golang.org/x/sys v0.0.0-20200113162924-86b910548bc1/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
