@@ -12,9 +12,6 @@
   <a href="https://wikipedia.org/wiki/Golang">
     <img src="https://img.shields.io/badge/language-go-9cf.svg">
  </a>
-  <a href="https://github.com/entynetproject/gyrux">
-    <img src="https://img.shields.io/badge/gyrux-CLI-red.svg?maxAge=2592000">
- </a>
   <a href="https://github.com/entynetproject/gyrux/issues?q=is%3Aissue+is%3Aclosed">
       <img src="https://img.shields.io/github/issues/entynetproject/gyrux.svg">
   </a>
