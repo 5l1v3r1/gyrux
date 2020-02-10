@@ -1,6 +1,6 @@
 # Gyrux Language
 
-![gyrux](https://user-images.githubusercontent.com/54115104/74140906-045e6a80-4c07-11ea-8817-0b34a71293ca.jpeg)
+![gyrux](https://user-images.githubusercontent.com/54115104/74159997-c45eae00-4c2d-11ea-9b2a-5841437be98b.jpeg)
 
 <p align="center">
   <a href="http://entynetproject.simplesite.com/">
