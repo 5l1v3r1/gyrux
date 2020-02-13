@@ -74,7 +74,7 @@
 > gyrux -help
 
 ```
-Usage: gyrux [OPTION...] <arguments...>
+Usage: gyrux [option] <arguments>
 
   -bin string
     	Path to the Gyrux binary.
