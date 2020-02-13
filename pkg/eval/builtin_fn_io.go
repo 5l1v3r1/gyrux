@@ -21,7 +21,6 @@ func init() {
 
 		// Bytes input
 		"read": read,
-                "read-upto": readUpto,
 
 		// Bytes output
 		"print":  print,
